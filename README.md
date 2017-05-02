@@ -1,2 +1,0 @@
-#How was today?
-This is a fun side project to see if I can collect statistical data about how a particular day went for everybody. Think of it as Amazon reviews for a given day. You can rate your day from 1-5 stars and write a detailed response if you want. When there's enough data, I'll work on displaying some metrics and maybe we can see how good or bad July 9th, 2014 was, in general.
