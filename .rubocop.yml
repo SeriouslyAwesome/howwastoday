@@ -1,5 +1,5 @@
 AllCops:
-  RunRailsCops: true
+  TargetRubyVersion: 2.3
   Include:
     - '**/Gemfile'
     - '**/Rakefile'
@@ -8,3 +8,35 @@ AllCops:
    - 'db/seeds.rb'
    - 'db/schema.rb'
    - 'vendor/bundle/**/*'
+
+Rails:
+  Enabled: true
+
+StringLiterals:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - '**/*.html.erb'
+    - 'db/**/*.rb'
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  SupportedStyles:
+    - nested
+    - compact
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Documentation:
+  Enabled: false
+
+# TODO(rosschapman): disable for now since it dings for comments/annotations at top of files.
+# Let's come back to this when we upgrade to Ruby v3.
+Style/FrozenStringLiteralComment:
+  Enabled: false
