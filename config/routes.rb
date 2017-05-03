@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     root to: 'users#index'
   end
 
-  root to: 'visitors#index'
+  resources :reviews
+
+  root to: 'reviews#new'
 
   devise_for :users
 end
