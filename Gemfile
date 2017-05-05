@@ -7,7 +7,7 @@ gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git
                         group: :test
 
 gem 'administrate'
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'bourbon'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
@@ -19,6 +19,7 @@ gem 'pg'
 gem 'pundit'
 gem 'rails', '4.2.8'
 gem 'sass-rails', '~> 5.0'
+gem 'tether-rails'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 

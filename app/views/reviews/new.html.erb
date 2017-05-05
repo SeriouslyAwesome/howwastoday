@@ -1,9 +1,13 @@
-<%= form_for @review do |f| %>
-  <%= f.radio_button :rating, 1 %>
-  <%= f.radio_button :rating, 2 %>
-  <%= f.radio_button :rating, 3 %>
-  <%= f.radio_button :rating, 4 %>
-  <%= f.radio_button :rating, 5 %>
+<%= form_for @review, html: { class: 'text-center' } do |f| %>
+  <h1>How was today?<br>
+  <small>Just generally</small></h1>
+  <p>
+    <%= f.radio_button :rating, 1 %>
+    <%= f.radio_button :rating, 2 %>
+    <%= f.radio_button :rating, 3 %>
+    <%= f.radio_button :rating, 4 %>
+    <%= f.radio_button :rating, 5 %>
+  </p>
 
-  <%= f.submit 'Submit' %>
+  <p><%= f.submit 'Submit' %></p>
 <% end %>

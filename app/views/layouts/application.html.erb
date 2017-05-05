@@ -5,13 +5,16 @@
     <title><%= content_for?(:title) ? yield(:title) : "Howwastoday" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Howwastoday" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <script src="https://use.fontawesome.com/f9ed5b99f3.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+
+  <body class="<%= controller_name %> <%= action_name %>">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
+
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
