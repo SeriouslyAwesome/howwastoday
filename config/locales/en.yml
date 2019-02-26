@@ -16,8 +16,37 @@
 #
 # This would use the information in config/locales/es.yml.
 #
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: How was your day today?
+  reviews:
+    new:
+      new_heading: How was your day today?
+      edit_heading: Need to reevaluate how it went today?
+    thanks:
+      rating_1_heading: I'm really sorry :(
+      rating_1_text: Sounds like a pretty bad day. Just remember that you can't always control what happens to you, but you can control how you respond to it. Tomorrow is another day; set a resolution to make it better than today.
+
+      rating_2_heading: Bummer :(
+      rating_2_text: I'm sorry your day didn't go so well. I'm sure tomorrow will be better!
+
+      rating_3_heading: Oh well :|
+      rating_3_text: Seems like it was neither here nor there, and that's okay. Could be better, but it could also be worse.
+
+      rating_4_heading: Awesome :)
+      rating_4_text: Glad you're having a good day!
+
+      rating_5_heading: Heck yes! :D
+      rating_5_text: If only every day could be this good, am I right!?

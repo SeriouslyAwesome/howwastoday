@@ -1,0 +1,28 @@
+<%= form_for @review, url: review_path do |f| %>
+
+  <h1><%= t(@review.persisted? ? '.edit_heading' : '.new_heading') %></h1>
+
+  <p style="color:#aaa">(<%= Time.now.strftime(" %A, %B %e, %Y %Z") %>)</p>
+
+  <p class='rtl'>
+    <%= f.radio_button :rating, 5 %>
+    <%= f.label :rating_5, class: 'fa-fw far fa-star' do %><span class="sr-only">5 Stars</span><% end %>
+
+    <%= f.radio_button :rating, 4 %>
+    <%= f.label :rating_4, class: 'fa-fw far fa-star' do %><span class="sr-only">4 Stars</span><% end %>
+
+    <%= f.radio_button :rating, 3 %>
+    <%= f.label :rating_3, class: 'fa-fw far fa-star' do %><span class="sr-only">3 Stars</span><% end %>
+
+    <%= f.radio_button :rating, 2 %>
+    <%= f.label :rating_2, class: 'fa-fw far fa-star' do %><span class="sr-only">2 Stars</span><% end %>
+
+    <%= f.radio_button :rating, 1 %>
+    <%= f.label :rating_1, class: 'fa-fw far fa-star' do %><span class="sr-only">1 Star</span><% end %>
+
+    <%= hidden_field_tag :time_zone, value: cookies['browser.timezone']%>
+  </p>
+
+
+  <p><%= f.submit 'Submit' %><p>
+<% end %>
