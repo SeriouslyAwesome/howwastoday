@@ -1,6 +1,8 @@
-class Review < ActiveRecord::Base
-  scope :latest, -> { order('created_at DESC') }
-  scope :with_content, -> { where.not(summary: nil, body: nil) }
+class Review < ApplicationRecord
+  scope :today, lambda { where(created_on: Date.current) }
+  scope :for, ->(date) { where(created_on: date) }
 
-  validates :rating, presence: true, numericality: { only_integer: true, in: 0..5 }
+  belongs_to :user, counter_cache: true
+
+  validates :rating, presence: true, numericality: { only_integer: true, in: 1..5 }
 end

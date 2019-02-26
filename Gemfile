@@ -1,55 +1,41 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.1'
+ruby '2.5.3'
 
-gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git',
-                        branch: 'rails-5',
-                        group: :test
+gem 'dotenv-rails'
 
-gem 'administrate'
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
-gem 'bourbon'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'devise'
-gem 'devise_invitable'
-gem 'high_voltage'
-gem 'jbuilder', '~> 2.0'
-gem 'jquery-rails'
-gem 'pg'
-gem 'pundit'
-gem 'rails', '4.2.8'
+gem 'awesome_print'
+gem 'bootsnap', '>= 1.1.0', require: false
+gem 'browser-timezone-rails'
+gem 'font-awesome-sass', '~> 5.6.1'
+gem 'mini_magick', '~> 4.8'
+gem 'pg', '>= 0.18', '< 2.0'
+gem 'puma', '~> 3.11'
+gem 'rails', '~> 5.2.2'
+gem 'redis', '~> 4.0'
 gem 'sass-rails', '~> 5.0'
-gem 'turbolinks'
+gem 'scout_apm'
+gem 'sentry-raven'
+gem 'turbolinks', '~> 5'
+gem 'tzinfo'
 gem 'uglifier', '>= 1.3.0'
 
-group :development do
-  gem 'better_errors'
-  gem 'foreman'
-  gem 'guard-bundler'
-  gem 'guard-rails'
-  gem 'guard-rspec'
-  gem 'rails_layout'
-  gem 'rb-fchange', require: false
-  gem 'rb-fsevent', require: false
-  gem 'rb-inotify', require: false
-  gem 'spring'
-  gem 'spring-commands-rspec'
-  gem 'web-console', '~> 2.0'
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.8'
 end
 
-group :development, :test do
-  gem 'byebug'
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'pry-rails'
-  gem 'pry-rescue'
-  gem 'rspec-rails'
-  gem 'rubocop'
+group :development do
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring'
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'launchy'
+  gem 'capybara', '>= 2.15'
+  gem 'chromedriver-helper'
   gem 'selenium-webdriver'
 end

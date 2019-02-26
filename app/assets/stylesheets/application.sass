@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "font-awesome-sprockets"
+@import "font-awesome"
+
+html,
+body
+  width: 100%
+  height: 100%
+  position: relative
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif
+  color: #444
+
+.sr-only
+  display: none
+
+.rtl
+  direction: rtl
+
+.thanks
+  text-align: center
+  position: relative
+  top: 50%
+  max-width: 40rem
+  margin: -6rem auto auto auto
+
+form.new_review,
+form.edit_review
+  text-align: center
+  position: relative
+  top: 50%
+  margin: -6rem auto auto auto
+
+  label
+    @extend .far
+    @extend .fa-fw
+    @extend .fa-2x
+    @extend .fa-star
+
+    color: #ccc
+    cursor: pointer
+    display: inline-block
+
+    &:hover
+      color: gold
+      @extend .fas
+
+  input[type='radio']
+    display: none
+
+    &:checked~label
+      @extend .fas
+      color: gold
+
+button,
+input[type='submit']
+  display: inline-block
+  color: white
+  text-align: center
+  vertical-align: middle
+  user-select: none
+  background-color: #0044aa
+  border: 0 solid transparent
+  padding: 0.5em 1em
+  font-size: 1rem
+  border-radius: 0.25rem
+
+  &:hover
+    cursor: pointer
+    text-decoration: none
+    background-color: lighten(#0044aa, 10%)
+
+  &:focus,
+  &.focus
+    outline: 0
+
+  &:active
+    background-color: darken(#0044aa, 10%)
