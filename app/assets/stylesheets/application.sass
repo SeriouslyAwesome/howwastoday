@@ -38,8 +38,7 @@ body
   max-width: 40rem
   margin: -6rem auto auto auto
 
-form.new_review,
-form.edit_review
+.review-form
   text-align: center
   position: relative
   top: 50%
@@ -62,7 +61,8 @@ form.edit_review
   input[type='radio']
     display: none
 
-    &:checked~label
+    &:checked~label,
+    &:hover~label
       @extend .fas
       color: gold
 

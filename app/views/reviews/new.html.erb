@@ -1,8 +1,8 @@
-<%= form_for @review, url: review_path do |f| %>
+<%= form_for @review, url: review_path, remote: true, authenticity_token: true, html: { class: 'review-form' } do |f| %>
 
   <h1><%= t(@review.persisted? ? '.edit_heading' : '.new_heading') %></h1>
 
-  <p style="color:#aaa">(<%= Time.now.strftime(" %A, %B %e, %Y %Z") %>)</p>
+  <p style="color:#aaa">(<%= Time.now.strftime("%A, %B %e, %Y") %>)</p>
 
   <p class='rtl'>
     <%= f.radio_button :rating, 5 %>
@@ -20,9 +20,17 @@
     <%= f.radio_button :rating, 1 %>
     <%= f.label :rating_1, class: 'fa-fw far fa-star' do %><span class="sr-only">1 Star</span><% end %>
 
-    <%= hidden_field_tag :time_zone, value: cookies['browser.timezone']%>
+    <%= hidden_field_tag :time_zone, cookies['browser.timezone']%>
   </p>
-
-
-  <p><%= f.submit 'Submit' %><p>
 <% end %>
+
+<script type="text/javascript">
+  var labels = document.querySelectorAll('input[type="radio"]');
+  var form = document.querySelector('.review-form');
+
+  labels.forEach(function(label) {
+    label.addEventListener('change', function() {
+      form.submit();
+    });
+  });
+</script>

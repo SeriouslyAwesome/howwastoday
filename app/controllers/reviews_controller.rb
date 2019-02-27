@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   after_action :set_user_time_zone, only: [:create, :update]
 
   def new
-    @review = current_user.reviews.for(Time.zone.now.to_date).first_or_initialize
+    @review = review_for_today
   end
 
   def create
@@ -11,12 +11,16 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = current_user.reviews.for(Time.zone.now.to_date).first_or_initialize
+    @review = review_for_today
     @review.update(review_params)
     render :thanks
   end
 
   private
+
+    def review_for_today
+      current_user.reviews.for(Time.zone.now.utc.to_date).first_or_initialize
+    end
 
     def review_params
       params.require(:review).permit(:rating, user_attributes: :time_zone)
